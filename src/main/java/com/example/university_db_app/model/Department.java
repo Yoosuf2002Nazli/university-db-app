@@ -19,15 +19,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Department {
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
- private Long id;
- @Column(name = "code", nullable = false, unique = true, length = 10)
- private String code;
- @Column(name = "name", nullable = false, length = 100)
- private String name;
- // ONE department has MANY lecturers. "mappedBy" = the foreign key lives in the lecturer table.
- @OneToMany(mappedBy = "department")
- private List<Lecturer> lecturers = new ArrayList<>();
+    private Long id;
+    @Column(name = "code", nullable = false, unique = true, length = 10)
+    private String code;
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
+    // ONE department has MANY lecturers. "mappedBy" = the foreign key lives in the lecturer table.
+    @OneToMany(mappedBy = "department")
+    private List<Lecturer> lecturers = new ArrayList<>();
 }

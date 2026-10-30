@@ -19,14 +19,14 @@ import lombok.Setter;
 
 public class Lecturer {
     @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- private Long id;
- @Column(name = "name", nullable = false, length = 100)
- private String name;
- @Column(name = "email", nullable = false, unique = true, length = 100)
- private String email;
- // MANY lecturers belong to ONE department (foreign key column: department_id)
- @ManyToOne(optional = false)
- @JoinColumn(name = "department_id")
- private Department department;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
+    @Column(name = "email", nullable = false, unique = true, length = 100)
+    private String email;
+    // MANY lecturers belong to ONE department (foreign key column: department_id)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "department_id")
+    private Department department;
 }
